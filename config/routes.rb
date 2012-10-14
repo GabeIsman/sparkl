@@ -3,6 +3,7 @@ Sparkl::Application.routes.draw do
   # first created -> highest priority.
 
   match 'data' => 'api#data'
+  root :to => 'sparkl#index'
 
   # Sample of regular route:
   # match 'products/:id' => 'catalog#view'
