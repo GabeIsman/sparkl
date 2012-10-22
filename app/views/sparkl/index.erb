@@ -3,3 +3,10 @@
         Yo
     </h1>
 </header>
+<body>
+    <div id="container">
+        <%= javascript_tag do %>
+            Sparkl.initialize({ data: <%== @sparks.to_json %> });
+        <% end %>
+    </div>
+<body>

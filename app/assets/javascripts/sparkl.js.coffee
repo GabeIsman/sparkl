@@ -3,7 +3,11 @@ window.Sparkl =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> alert 'Hello from Backbone!'
+  initialize: (data) -> 
+    sparks = new Sparkl.Collections.Sparks(data)
+    new Sparkl.Routers.Sparks(data)
+    Backbone.history.start()
+
 
 $(document).ready ->
-  Sparkl.init()
+  
