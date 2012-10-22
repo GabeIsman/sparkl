@@ -5,8 +5,10 @@ class Sparkl.Routers.Sparks extends Backbone.Router
 
     initialize: (data) ->
         console.log(data)
+
         this.navigate("index")
 
     index: ->
-        alert "hello from router"
+        view = new Sparkl.Views.SparksIndex({ collection: Sparkl.sparks })
+        $('#container').html(view.render().$el)
 
