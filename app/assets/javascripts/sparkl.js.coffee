@@ -4,8 +4,7 @@ window.Sparkl =
   Views: {}
   Routers: {}
   initialize: ( data ) -> 
-    sparks = new Sparkl.Collections.Sparks(data)
-    console.log sparks
+    window.sparks = new Sparkl.Collections.Sparks(data)
     new Sparkl.Routers.Sparks(data)
     Backbone.history.start()
 
@@ -31,20 +30,29 @@ class Sparkl.Views.AppView extends Backbone.View
         _.bindAll( this, 'render')
 
     render: () ->
-        Sparkl.sparks.each ( model ) ->
+        sparks.each ( model ) ->
+            console.log model
             view = new Sparkl.Views.SparkView( {model: model} )
-            view.render();
+            view.render(Math.floor(Math.random() * 10) + 1);
 
 class Sparkl.Views.SparkView extends Backbone.View
-    initialize: () ->
-        _.bindAll(this, 'render')
+    events: {
+        'load img': 'onImageLoad'
+    }
 
-    render: () ->
-        template = _.template $("#spark-template").html(), this.model.toJSON
-        console.log "template: #{template}"
-        $(id).html $(@el).html template
-        console.log "this: #{$(this.el)}"
+
+    initialize: () ->
+        _.bindAll(this, 'render', 'onImageLoad')
+
+    render: (grid_number) ->
+        template = _.template $("#spark-template").html(), this.model.toJSON()
+        @el = "#grid-" + grid_number;
+        $(@el).html template
+        $(@el).find('img').on('load', this.onImageLoad);
         return this
+
+    onImageLoad: () ->
+        $(@el).find('.spark').fadeIn( 600 )
 
 
 class Sparkl.Models.Spark extends Backbone.Model
@@ -52,3 +60,6 @@ class Sparkl.Models.Spark extends Backbone.Model
 class Sparkl.Collections.Sparks extends Backbone.Collection
     model: Sparkl.Models.Spark
     url: "/sparks"
+    initialize: ( models ) ->
+
+

@@ -1,10 +1,14 @@
-#container {
-    width: 60%;
+#wrapper {
+    width: 39%;
     margin: auto;
 }
 
 .grid {
     background-color: gray;
     margin-top: 20px;
-    height: 180px;
+    height: 178px;
+}
+
+.spark {
+    display: none;   
 }
