@@ -2,14 +2,12 @@ class SparklController < ApplicationController
     respond_to :html
     def index
         @sparks = { 
-            :sparks => {
-                :type => "tweet",
-                :content => "Sparkl dude this is awesome.",
-                :url => "http://www.google.com",
-                :author => "@gabeisman",
-                :source => "twitter",
-                :id => params[:id]
-            }
+            :type => "tweet",
+            :content => "Sparkl dude this is awesome.",
+            :url => "http://www.google.com",
+            :author => "@gabeisman",
+            :source => "twitter",
+            :id => params[:id]
         }
 
         respond_with(@sparks)
