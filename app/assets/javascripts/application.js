@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
+//= require .//underscore
 //= require backbone
 //= require bootstrap
+//
 //
 //= require .//sparkl
 //

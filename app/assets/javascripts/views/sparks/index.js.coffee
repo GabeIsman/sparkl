@@ -1,7 +1,10 @@
 class Sparkl.Views.SparksIndex extends Backbone.View
+    
+    id: "some-id"
+    #el: "wrapper"
 
-  render: ->
-    this.$el.html(JST['sparks/index']({ sparks: this.collection }))
-    return this
+    initialize: () ->
+        _.bindAll( this, 'render')
 
-  template: JST['sparks/index']
+    render: ->
+        

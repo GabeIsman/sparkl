@@ -1,11 +1,11 @@
 class Sparkl.Collections.Sparks extends Backbone.Collection
 
-  model: Sparkl.Models.Spark
+    model: Sparkl.Models.Spark
 
-  initialize: (data) -> 
+    initialize: (data) -> 
 
-  render: ->
-    
+    render: ->
+
   
 
 

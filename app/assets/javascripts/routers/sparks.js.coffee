@@ -9,6 +9,5 @@ class Sparkl.Routers.Sparks extends Backbone.Router
         this.navigate("index")
 
     index: ->
-        view = new Sparkl.Views.SparksIndex({ collection: Sparkl.sparks })
-        $('#container').html(view.render().$el)
-
+        view = new Sparkl.Views.SparksIndex
+        view.render()
