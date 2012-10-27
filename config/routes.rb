@@ -2,7 +2,8 @@ Sparkl::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  match 'data' => 'api#data'
+  match 'sparks/:id' => 'sparks#view'
+  match 'sparks' => 'sparks#index'
   root :to => 'sparkl#index'
 
   # Sample of regular route:
