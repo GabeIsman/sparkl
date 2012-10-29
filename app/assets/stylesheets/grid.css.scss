@@ -1,14 +1,13 @@
 #wrapper {
-    width: 39%;
+    width: 100%;
     margin: auto;
 }
 
-.grid {
-    background-color: gray;
-    margin-top: 20px;
-    height: 178px;
-}
 
 .spark {
-    display: none;   
+    display: none;
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
 }
